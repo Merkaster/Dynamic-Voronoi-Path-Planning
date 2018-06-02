@@ -1,0 +1,23 @@
+<launch>
+	
+
+	<arg name="urdf" default="$(find python_client)/model/pioneer3dx.urdf" />
+	<arg name="joint_state_gui" default="False" />
+
+	<include file="$(find python_client)/rosaria.launch">
+		<arg name="urdf" value="$(arg urdf)"/>
+	</include>
+	
+	<node pkg="tf" type="static_transform_publisher" name="laser_frame" args="0 0 0 0.13 0 0.39 base_link laser 100" />
+	
+	<node pkg ="fake_localization" type="fake_localization" name = "odom_to_map"/>
+	<node pkg="tf" type="static_transform_publisher" name="map_to_base" args=" 0 0 0 0 0 0 map odom 50" />
+
+	<node pkg = "pointcloud_to_laserscan" type="pointcloud_to_laserscan_node"  name="pointcloud_to_laserscan" />
+
+	<!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find python_client)/rosaria.rviz" required="true" /-->
+
+	<node pkg="python_client" name="Robot" type="robot.py" output="screen" />
+	
+</launch>
+

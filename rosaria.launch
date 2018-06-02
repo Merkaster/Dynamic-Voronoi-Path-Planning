@@ -1,0 +1,8 @@
+<launch>
+   <param name="use_sim_time" value="false"/>
+  <arg name="urdf" default="$(find python_client)/model/pioneer3dx.urdf" />
+  <param name="robot_description" textfile="$(arg urdf)" />
+  <node pkg = "rosaria" type = "RosAria" name = "RosAria">
+		<param name="publish_aria_lasers" value="True" type="bool" />
+  </node>		
+</launch>

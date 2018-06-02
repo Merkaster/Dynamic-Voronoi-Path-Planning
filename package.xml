@@ -1,0 +1,28 @@
+<package>
+  <name>python_client</name>
+  <version>1.0.0</version>
+  <description>Example launch files hfor use with rosaria and Adept MobileRobots/ActivMedia robots</description>
+  <maintainer email="reed.hedges@adept.com">Reed Hedges</maintainer> 
+  <url type="website">http://wiki.ros.org/Robots/Pioneer</url>
+  <author email="reed.hedges@adept.com">Reed Hedges</author>
+  <author>Adept MobileRobots</author>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>urdf</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <build_depend>rosaria</build_depend>
+  <build_depend>rospy</build_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>roslaunch</run_depend>
+</package>
+
